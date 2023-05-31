@@ -1,0 +1,25 @@
+{
+  "name": "blog_server",
+  "version": "0.1.0",
+  "description": "A blog server using Node.js, Express and Mongodb.",
+  "private": true,
+  "author": "LeeRo",
+  "license": "MIT",
+  "main": "./server/index.js",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5"
+  },
+  "scripts": {
+    "server": "yarn build:id && nodemon ./index.js",
+    "build:id": "node ./boot/createArticleIdMap.js"
+  },
+  "devDependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.1.1",
+    "nodemon": "^2.0.22"
+  }
+}
