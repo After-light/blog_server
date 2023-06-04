@@ -79,12 +79,12 @@ const getArticlesInfo = () => {
       return !stats.isDirectory();
     })
     .map((file) => {
-      const { birthtime } = getArticleStat(file.name);
+      const { ctime } = getArticleStat(file.name);
       return {
         ...articleModel,
         id: articlesIdMap[file.name],
         ...getArticleDetail(file.name, 3),
-        createTime: (moment(birthtime) || moment()).format('YYYY-MM-DD'),
+        createTime: (moment(ctime) || moment()).format('YYYY-MM-DD'),
       };
     });
 };
